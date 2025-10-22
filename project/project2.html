@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title> <style>
+        .abc {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            width: 200px;
+            margin: 10px; 
+            border: 2px solid black; 
+            cursor: pointer; 
+        }
+        #grey {
+            background-color: grey;
+        }
+        #white {
+            background-color: white;
+            color: black; 
+        }
+        #blue {
+            background-color: blue;
+            color: white; 
+        }
+        #yellow {
+            background-color: yellow;
+            color: black; 
+        }
+    </style>
+</head>
+<body>
+    <div><button id="grey" class="abc">first</button></div>
+    <div><button id="white" class="abc">second</button></div>
+    <div><button id="blue" class="abc">third</button></div>
+    <div><button id="yellow" class="abc">fourth</button></div>
+</body>
+<script>
+    const buttons = document.querySelectorAll('.abc'); 
+    const body = document.querySelector('body'); 
+    buttons.forEach(function(button){
+        button.addEventListener('click', function (e){
+            body.style.backgroundColor = e.target.id; 
+        });
+    });
+</script>
+</html>
